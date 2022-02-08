@@ -17,6 +17,19 @@ const create = async (user) => {
   return token;
 };
 
+const login = async ({ email, password }) => {
+  const userExists = await User.findOne({ where: { email } });
+  if (!userExists) throw new Error('Invalid fields');
+
+  const jwtConfig = {
+    expiresIn: '7d',
+    algorithm: 'HS256',
+  };
+  const token = jwt.sign({ email, password }, process.env.JWT_SECRET, jwtConfig);
+  return token;
+};
+
 module.exports = {
   create,
+  login,
 };
