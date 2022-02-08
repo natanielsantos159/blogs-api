@@ -3,11 +3,11 @@ const userService = require('../services/userService');
 const create = async (req, res) => {
   const { displayName, email, password, image } = req.body;
   try {
-    await userService.create({ displayName, email, password, image });
+    const token = await userService.create({ displayName, email, password, image });
+    return res.status(201).json({ token });
   } catch (err) {
-    const error = JSON.parse(err.message);
-    if (error.code && error.message) {
-      return res.status(error.code).json({ message: error.message });
+    if (err.message === 'User already registered') {
+      return res.status(409).json({ message: 'User already registered' });
     }
     console.log(err);
   }
