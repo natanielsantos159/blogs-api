@@ -7,6 +7,7 @@ const userController = require('./controllers/userController.js');
 
 const validateUserInfo = require('./middlewares/validateUserInfo');
 const validateLoginFields = require('./middlewares/validateLoginFields');
+const validateJWT = require('./middlewares/validateJWT');
 
 app.use(express.json());
 
@@ -20,3 +21,5 @@ app.get('/', (request, response) => {
 app.post('/user', validateUserInfo, userController.create);
 
 app.post('/login', validateLoginFields, userController.login);
+
+app.get('/user', validateJWT, userController.getAll);
