@@ -23,3 +23,5 @@ app.post('/user', validateUserInfo, userController.create);
 app.post('/login', validateLoginFields, userController.login);
 
 app.get('/user', validateJWT, userController.getAll);
+
+app.get('/user/:id', validateJWT, userController.getById);
