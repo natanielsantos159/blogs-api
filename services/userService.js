@@ -34,8 +34,14 @@ const getAll = async () => {
   return allUsers;
 };
 
+const getById = async (id) => {
+  const foundUser = await User.findOne({ where: { id } });
+  return foundUser;
+};
+
 module.exports = {
   create,
   login,
   getAll,
+  getById,
 };
