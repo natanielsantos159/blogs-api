@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 
 const userController = require('./controllers/userController.js');
+const categoryController = require('./controllers/categoryController.js');
 
 const validateUserInfo = require('./middlewares/validateUserInfo');
 const validateLoginFields = require('./middlewares/validateLoginFields');
@@ -25,3 +26,5 @@ app.post('/login', validateLoginFields, userController.login);
 app.get('/user', validateJWT, userController.getAll);
 
 app.get('/user/:id', validateJWT, userController.getById);
+
+app.post('/categories', validateJWT, categoryController.create);
