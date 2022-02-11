@@ -34,3 +34,5 @@ app.post('/categories', validateJWT, categoryController.create);
 app.get('/categories', validateJWT, categoryController.getAll);
 
 app.post('/post', validateJWT, validatePostInfo, postController.create);
+
+app.get('/post', validateJWT, postController.getAll);
