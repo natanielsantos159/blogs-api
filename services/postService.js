@@ -22,6 +22,26 @@ const create = async (postInfo) => {
   return createdPost.dataValues;
 };
 
+const getAll = async () => {
+  const blogPosts = await BlogPost.findAll();
+  const promisesArray = blogPosts.map(async (Post) => {
+    const { dataValues: user } = await Post.getUser();
+
+    const Categories = await Post.getCategories();
+    const categoriesValues = Categories.map(({ dataValues: { id, name } }) => ({ id, name }));
+
+    return {
+      ...Post.dataValues,
+      user,
+      categories: categoriesValues,
+    };
+  });
+
+  const posts = await Promise.all(promisesArray);
+  return posts;
+};
+
 module.exports = {
   create,
+  getAll,
 };
