@@ -35,13 +35,7 @@ Nesse projeto, foi construído um back-end usando `ORM` com o pacote `sequelize`
 
 Para rodar esse projeto na sua máquina, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
 
-`HOSTNAME`
-
-`MYSQL_USER`
-
-`MYSQL_PASSWORD`
-
-`JWT_SECRET`
+`HOSTNAME` `MYSQL_USER` `MYSQL_PASSWORD` `JWT_SECRET`
 
 ## Rodando localmente
 
@@ -66,7 +60,7 @@ Instale as dependências
 
 ## Documentação da API
 
-#### Posta um novo post
+### Posta um novo post
 
 ```http
   POST /post
@@ -78,7 +72,7 @@ Instale as dependências
 | `content` | `string` | **Obrigatório**. O conteúdo do post |
 | `categoryIds` | `array` | **Obrigatório**. Um array de IDs de categorias |
 
-####  Obter todos os posts
+###  Obter todos os posts
 
 ```http
   GET /post
@@ -111,12 +105,12 @@ Instale as dependências
 ]
 ```
 
-####  Obter post pelo id
+### Obter post pelo id
 
 ```http
   GET /post/:id
 ```
-- Retorna um post com o `id` especificado. O retorno deve ter os seguinte formato:
+- Retorna um post com o `id` especificado. O retorno terá o seguinte formato:
 
 ```json
   {
@@ -141,7 +135,7 @@ Instale as dependências
 }
 ```
 
-####  Editar post pelo id
+###  Editar post pelo id
 
 ```http
   PUT /post/:id
@@ -153,7 +147,7 @@ Instale as dependências
 | `content` | `string` | **Opcional**. Novo conteúdo do post |
 
 
-#### Cadastra um usuário
+### Cadastra um usuário
 
 ```http
   POST /user
@@ -167,7 +161,7 @@ Instale as dependências
 | `image` | `string` | **Opcional** A imagem do perfil|
 
 
-#### Faz o login do usuário
+### Faz o login do usuário
 
 ```http
   POST /login
@@ -179,7 +173,7 @@ Instale as dependências
 | `password` | `string` | **Obrigatório**. A senha do usuário |
 
 
-####  Cadastra uma nova categoria
+###  Cadastra uma nova categoria
 
 ```http
   POST /categories
@@ -189,7 +183,7 @@ Instale as dependências
 | :---------- | :--------- | :------------------------------------------ |
 | `name`      | `string` | **Obrigatório**. O nome da categoria  |
 
-####  Obter todas as categorias
+###  Obter todas as categorias
 
 ```http
   GET /categories
