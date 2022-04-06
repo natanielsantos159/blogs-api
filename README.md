@@ -3,6 +3,23 @@
 
 O `Blogs API` é um CRUD feito pra um site de notícias! 📰
 
+## Sumário 
+
+- [Objetivo](#objetivo)
+- [Stack utilizada](#stack-utilizada)
+- [Variáveis de Ambiente](#variáveis-de-ambiente)
+- [Rodando localmente](#rodando-localmente)
+- [Documentação da API](#documentação-da-api)
+  - [Posta um novo post](#posta-um-novo-post)
+  - [Obter todos os posts](#obter-todos-os-posts)
+  - [Obter post pelo id](#obter-post-pelo-id)
+  - [Editar post pelo id](#editar-post-pelo-id)
+  - [Cadastra um usuário](#cadastra-um-usuário)
+  - [Faz o login do usuário](#faz-o-login-do-usuário)
+  - [Cadastra uma nova categoria](#cadastra-uma-nova-categoria)
+  - [Obter todas as categorias](#obter-todas-as-categorias)
+
+---
 ## Objetivo
 Nesse projeto, foi construído um back-end usando `ORM` com o pacote `sequelize` do `npm`, praticando as seguintes habilidades:
  - Criar e associar tabelas usando `models` do `sequelize`
@@ -45,9 +62,6 @@ Instale as dependências
 ```bash
   npm install
 ```
-
-
-
 
 
 ## Documentação da API
